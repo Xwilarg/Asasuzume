@@ -9,7 +9,7 @@
     "description": {
         "en": "One of the first characters to appear in the Mahjong Soul Shrine. She is the current priestess of the shrine who claims to be human, despite her cat ears. To Ichihime, nothing is more important than eating and napping.",
         "jp": "魂天神社に現れた最初の雀士の一人で、魂天神社の現役の巫女。ネコミミがありながらも自分は人間だと強く主張している。彼女にとってはご飯と昼寝が何よりも大事。",
-        "kr": "",
+        "kr": "혼천 신사에 나타난 최초의 작사 중 한 사람이자, 혼천 신사의 현역 무녀. 고양이 귀가 달려 있지만 본인은 인간이라고 강력하게 주장하고 있다. 밥과 낮잠보다 중요한 것은 없다.",
         "cn": "出現在魂天神社的最初的雀士其中一人, 現任魂天神社巫女, 雖然長著貓耳, 但很堅定地聲稱自己是人類。對於她而言, 沒有什麼事情比吃飯和午睡更為重要。"
     },
     "lobby1": {
@@ -39,25 +39,25 @@
     "login_normal": {
         "en": "Master, welcome back-nyaa!",
         "jp": "ご主人、お帰りにゃ！",
-        "kr": "",
+        "kr": "주인아~ 어서 오라냥!",
         "cn": "主人, 歡迎回來喵!"
     },
     "obtained": {
         "en": "Hello! My name is Ichihime. Glad to meet you-nya!",
         "jp": "ちーっす！私は一姫にゃ！よろしくにゃん！",
-        "kr": "",
+        "kr": "반갑다냥! 난 이치히메다냥! 잘 부탁한다냥!",
         "cn": "你好啊! 我叫一姬, 請多多關照喵!"
     },
     "gift_normal": {
         "en": "Nyaa? Is this for me? You are so kind!",
         "jp": "にゃにゃにゃ？くれるのかにゃ？ご主人はいい人だにゃー！",
-        "kr": "",
+        "kr": "냐옹? 나한테 주는 거냥? 주인은 좋은 사람이다냥!",
         "cn": "喵喵喵? 給我的嗎? 你真是個好人呢!"
     },
     "gift_preferred": {
         "en": "A gift? Is it something yummy?",
         "jp": "プレゼント…？食べ物かにゃあ？",
-        "kr": "",
+        "kr": "선물･･･? 먹을 거냥?",
         "cn": "禮物? 是好吃的嗎!"
     },
     "first": {
