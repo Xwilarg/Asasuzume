@@ -1,5 +1,38 @@
+#banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #b1c0c4;
+}
+
+#banner a {
+    position: absolute;
+    left: 15px;
+    width: 30px;
+    color: black;
+}
+
+#banner a:hover {
+    color: white;
+}
+
+.material-symbols-outlined {
+    display: inline-flex;
+    vertical-align: top;
+}
+
+#main-table {
+    display: flex;
+    justify-content: center;
+}
+
 table {
-    margin-top: 2em;
+    margin-top: calc(2em + 50px);
     border-collapse: collapse;
 }
 
@@ -15,4 +48,16 @@ tr:nth-child(even) {
 
 td.lang {
     width: 20vw;
+}
+
+td a {
+    color: blue;
+}
+
+td a:hover {
+    color: black;
+}
+
+td a:active {
+    color: blue;
 }

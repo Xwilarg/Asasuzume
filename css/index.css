@@ -13,3 +13,7 @@
     border: 1px solid grey;
     margin: 3px;
 }
+
+#characters-list img:hover {
+    border: 1px solid black;
+}

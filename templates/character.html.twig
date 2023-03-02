@@ -1,8 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    <h2>{{ data.name }}</h2>
-    <div>
+    <div id="banner">
+        <a href="/"><span class="material-symbols-outlined">undo</span></a>
+        <h2>{{ data.name }}</h2>
+    </div>
+    <div id="main-table">
         <table>
             <thead>
                 <th>Name</th>
