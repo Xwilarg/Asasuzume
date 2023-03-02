@@ -9,7 +9,7 @@
     "lobby1": {
         "en": "Master, where is my launch?",
         "jp": "ご主人、私の昼ご飯はー？",
-        "kr": "주인아~ 내 점심밥은 언제 줄 거야?",
+        "kr": "주인아〜 내 점심밥은 언제 줄 거야?",
         "cn": "主人, 我的午飯呢?"
     },
     "lobby2": {
@@ -38,7 +38,7 @@
     },
     "obtained": {
         "en": "Hello! My name is Ichihime. Glad to meet you-nya!",
-        "jp": "",
+        "jp": "ちーっす！私は一姫にゃ！よろしくにゃん！",
         "kr": "",
         "cn": ""
     },
@@ -51,6 +51,12 @@
     "gift_preferred": {
         "en": "A gift? Is it something yummy?",
         "jp": "プレゼント…？食べ物かにゃあ？",
+        "kr": "",
+        "cn": ""
+    },
+    "first": {
+        "en": "",
+        "jp": "天下無双にゃ〜〜〜〜〜",
         "kr": "",
         "cn": ""
     }

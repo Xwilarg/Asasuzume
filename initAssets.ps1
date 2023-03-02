@@ -43,6 +43,9 @@ foreach ($folder in Get-ChildItem ($Args[0] + "character voices")) {
         elseif ( $file.Name -eq "voice when obtained.mp3" ) {
             Copy-Item $file.FullName -Destination ($targetFolder + "\\obtained.mp3")
         }
+        elseif ( $file.Name -eq "finishing a game in 1st place.mp3" ) {
+            Copy-Item $file.FullName -Destination ($targetFolder + "\\first.mp3")
+        }
     }
     Copy-Item ($Args[0] + "portraits\\" + $folder.Name + "\\Default\\smallhead.png") -Destination ("assets\\icons\\" + $folder.Name.replace(' ','') + ".png")
 }
