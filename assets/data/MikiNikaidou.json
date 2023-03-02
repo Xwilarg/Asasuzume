@@ -2,37 +2,37 @@
     "name": "Miki Nikaidou",
     "lobby1": {
         "en": "Riichi! Ippatsu! Haha~ just kidding~",
-        "jp": "",
+        "jp": "リーチ！イッパツ！なーんてね。",
         "kr": "",
         "cn": ""
     },
     "lobby2": {
         "en": "If you can win me over on the Mahjong table, I will give you a little surprise.",
-        "jp": "",
+        "jp": "麻雀で私に勝てたら、ちょっぴりサプライズなご褒美…",
         "kr": "",
         "cn": ""
     },
     "login_normal": {
         "en": "Welcome back~ What are you going to do today?",
-        "jp": "",
+        "jp": "おかえりなさい。今日は何をしましょうか",
         "kr": "",
         "cn": ""
     },
     "obtained": {
         "en": "I am Miki Nikaido. Glad to meet you~",
-        "jp": "",
+        "jp": "二階堂美樹です、よろしくお願いします~",
         "kr": "",
         "cn": ""
     },
     "gift_normal": {
         "en": "Thank you! I will take good care of it~",
-        "jp": "",
+        "jp": "ありがとう、大事にするわ",
         "kr": "",
         "cn": ""
     },
     "gift_preferred": {
         "en": "As long as it's from you, I love it.",
-        "jp": "",
+        "jp": "あなたがくれるものなら、どんなものでも宝物よ",
         "kr": "",
         "cn": ""
     }
