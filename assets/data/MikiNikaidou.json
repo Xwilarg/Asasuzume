@@ -1,39 +1,45 @@
 {
     "name": "Miki Nikaidou",
+    "description": {
+        "en": "",
+        "jp": "",
+        "kr": "신비한 여성 작사. 총명하며 지적이지만, 애매한 단어로 남을 놀리는 걸 좋아하기 때문에 본심을 잘 읽을 수 없다. 고슴도치 한 마리를 애완동물로 기르고 있다. 아름다운 보석을 특히나 좋아한다.",
+        "cn": ""
+    },
     "lobby1": {
         "en": "Riichi! Ippatsu! Haha~ just kidding~",
         "jp": "リーチ！イッパツ！なーんてね。",
-        "kr": "",
+        "kr": "리치! 일발! 장난이야.",
         "cn": ""
     },
     "lobby2": {
         "en": "If you can win me over on the Mahjong table, I will give you a little surprise.",
         "jp": "麻雀で私に勝てたら、ちょっぴりサプライズなご褒美…",
-        "kr": "",
+        "kr": "마작으로 나를 이기면 깜짝 선물을･･･ 줄 수도 있는데~?",
         "cn": ""
     },
     "login_normal": {
         "en": "Welcome back~ What are you going to do today?",
         "jp": "おかえりなさい。今日は何をしましょうか",
-        "kr": "",
+        "kr": "어서 오세요. 오늘은 뭘 할까요?",
         "cn": ""
     },
     "obtained": {
         "en": "I am Miki Nikaido. Glad to meet you~",
         "jp": "二階堂美樹です、よろしくお願いします~",
-        "kr": "",
+        "kr": "니카이도 미키에요.",
         "cn": ""
     },
     "gift_normal": {
         "en": "Thank you! I will take good care of it~",
         "jp": "ありがとう、大事にするわ",
-        "kr": "",
+        "kr": "고마워. 소중히 간직 할게.",
         "cn": ""
     },
     "gift_preferred": {
         "en": "As long as it's from you, I love it.",
         "jp": "あなたがくれるものなら、どんなものでも宝物よ",
-        "kr": "",
+        "kr": "당신이 주는 거라면 내겐 어떠한 것도 보물이야.",
         "cn": ""
     }
 }
