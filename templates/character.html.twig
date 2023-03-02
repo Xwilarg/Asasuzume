@@ -19,7 +19,11 @@
             {% for key, value in audio %}
                 <tr>
                     <td class="name">{{ value }}</td>
-                    <td class="audio"><a href="assets/audio/{{ data.name | replace({' ': ''}) }}/{{ key }}.mp3"><span class="material-symbols-outlined">play_arrow</span></a></td>
+                    <td class="audio">
+                    {% if key != "description" %}
+                        <a href="assets/audio/{{ data.name | replace({' ': ''}) }}/{{ key }}.mp3"><span class="material-symbols-outlined">play_arrow</span></a>
+                    {% endif %}
+                    </td>
                     <td class="lang">{{ data[key].en }}</td>
                     <td class="lang">{{ data[key].jp }}</td>
                     <td class="lang">{{ data[key].cn }}</td>

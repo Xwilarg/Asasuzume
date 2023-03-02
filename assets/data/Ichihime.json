@@ -1,8 +1,14 @@
 {
     "name": "Ichihime",
+    "height": "154 cm",
+    "birthday": "11th January",
+    "age": "Unknown",
+    "blood_type": "A",
+    "CV": "Maaya Uchida",
+    "hobby": "Food, sleep",
     "description": {
         "en": "One of the first characters to appear in the Mahjong Soul Shrine. She is the current priestess of the shrine who claims to be human, despite her cat ears. To Ichihime, nothing is more important than eating and napping.",
-        "jp": "",
+        "jp": "魂天神社に現れた最初の雀士の一人で、魂天神社の現役の巫女。ネコミミがありながらも自分は人間だと強く主張している。彼女にとってはご飯と昼寝が何よりも大事。",
         "kr": "",
         "cn": ""
     },

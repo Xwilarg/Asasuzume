@@ -9,6 +9,7 @@ $loader = new FilesystemLoader("templates");
 $twig = new Environment($loader);
 
 $audioList = [
+    "description" => "Description",
     "bond1" => "Bond Lvl 1",
     "bond2" => "Bond Lvl 2",
     "bond3" => "Bond Lvl 3",
