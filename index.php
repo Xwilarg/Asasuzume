@@ -39,7 +39,9 @@ foreach (new DirectoryIterator('./assets/data') as $fileInfo) {
     if (substr($fileInfo, 0, -5) === $targetName) {
         echo $twig->render("character.html.twig", [
             "data" => $content,
-            "audio" => $audioList
+            "audio" => $audioList,
+            "css" => [ "base", "character" ],
+            "js" => [ "character" ]
         ]);
         return;
     }
@@ -79,5 +81,7 @@ echo $twig->render("index.html.twig", [
         "details" => $stats,
         "audioCount" => count($audioList),
         "total" => $tt
-    ]
+    ],
+    "css" => [ "base", "index" ],
+    "js" => []
 ]);

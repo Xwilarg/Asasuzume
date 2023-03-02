@@ -22,6 +22,7 @@
         <br/>
         Characters: {{ stats.characters }} / {{ stats.charactersTotal }}<br/>
         Global Progression: {{ (stats.total * 100 / (stats.charactersTotal * stats.audioCount * 4)) | round(0, 'floor') }}%<br/>
+        <br/>
         Details:<br/>
         <br/>
         {% for key, value in stats.details %}

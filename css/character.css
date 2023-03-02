@@ -1,0 +1,18 @@
+table {
+    margin-top: 2em;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #555;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #b1c0c4;
+}
+
+td.lang {
+    width: 20vw;
+}
