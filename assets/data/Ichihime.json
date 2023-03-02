@@ -1,5 +1,11 @@
 {
     "name": "Ichihime",
+    "description": {
+        "en": "One of the first characters to appear in the Mahjong Soul Shrine. She is the current priestess of the shrine who claims to be human, despite her cat ears. To Ichihime, nothing is more important than eating and napping.",
+        "jp": "",
+        "kr": "",
+        "cn": ""
+    },
     "lobby1": {
         "en": "Master, where is my launch?",
         "jp": "ご主人、私の昼ご飯はー？",
@@ -25,8 +31,26 @@
         "cn": ""
     },
     "login_normal": {
-        "en": "",
+        "en": "Master, welcome back-nyaa!",
         "jp": "ご主人、お帰りにゃ！",
+        "kr": "",
+        "cn": ""
+    },
+    "obtained": {
+        "en": "Hello! My name is Ichihime. Glad to meet you-nya!",
+        "jp": "",
+        "kr": "",
+        "cn": ""
+    },
+    "gift_normal": {
+        "en": "Nyaa? Is this for me? You are so kind!",
+        "jp": "",
+        "kr": "",
+        "cn": ""
+    },
+    "gift_preferred": {
+        "en": "A gift? Is it something yummy?",
+        "jp": "",
         "kr": "",
         "cn": ""
     }

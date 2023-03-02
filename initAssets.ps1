@@ -34,6 +34,15 @@ foreach ($folder in Get-ChildItem ($Args[0] + "character voices")) {
         elseif ( $file.Name -eq "login voice - max bond.mp3" ) {
             Copy-Item $file.FullName -Destination ($targetFolder + "\\login_max.mp3")
         }
+        elseif ( $file.Name -eq "receiving gift - normal.mp3" ) {
+            Copy-Item $file.FullName -Destination ($targetFolder + "\\gift_normal.mp3")
+        }
+        elseif ( $file.Name -eq "receiving gift - preferred.mp3" ) {
+            Copy-Item $file.FullName -Destination ($targetFolder + "\\gift_preferred.mp3")
+        }
+        elseif ( $file.Name -eq "voice when obtained.mp3" ) {
+            Copy-Item $file.FullName -Destination ($targetFolder + "\\obtained.mp3")
+        }
     }
     Copy-Item ($Args[0] + "portraits\\" + $folder.Name + "\\Default\\smallhead.png") -Destination ("assets\\icons\\" + $folder.Name.replace(' ','') + ".png")
 }

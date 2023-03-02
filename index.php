@@ -20,7 +20,9 @@ foreach (new DirectoryIterator('./assets/data') as $fileInfo) {
             "audio" => [
                 "bond1", "bond2", "bond3", "bond4", "bond5",
                 "lobby1", "lobby2", "lobby3", "lobby4", "lobby5", "lobby6", "lobby7", "lobby8",
-                "login_normal", "login_max"
+                "login_normal", "login_max",
+                "gift_normal", "gift_preferred",
+                "obtained"
             ]
         ]);
         return;
