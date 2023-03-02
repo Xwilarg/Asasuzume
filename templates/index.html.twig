@@ -1,6 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
+    <h2>Asasuzume</h2>
+    <p>
+        Tool to display the voice lines and text of Mahjong Soul<br/>
+        Press a character image to start
+    </p>
     <div id="characters-list">
         {% for elem in data %}
             <div>
@@ -10,4 +15,19 @@
             </div>
         {% endfor %}
     </div>
+    <p>
+        Source code and contribution guide available on <a href="https://github.com/Xwilarg/Asasuzume" target="_blank">GitHub</a><br/>
+        <br/>
+        Characters: {{ stats.characters }} / {{ stats.charactersTotal }}<br/>
+        Details:<br/>
+        <br/>
+        {% for key, value in stats.details %}
+            {{ key }}: {{ (value.en + value.jp + value.cn + value.kr * 100 / stats.audioCount / 4) | round(0, 'floor') }}%<br/>
+            - English: {{ (value.en * 100 / stats.audioCount) | round(0, 'floor') }}%<br/>
+            - Japanese: {{ (value.jp * 100 / stats.audioCount) | round(0, 'floor') }}%<br/>
+            - Korean: {{ (value.kr * 100 / stats.audioCount) | round(0, 'floor') }}%<br/>
+            - Chinese: {{ (value.cn * 100 / stats.audioCount) | round(0, 'floor') }}%<br/>
+            <br/>
+        {% endfor %}
+    </p>
 {% endblock %}
