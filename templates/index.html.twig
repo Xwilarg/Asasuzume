@@ -4,7 +4,7 @@
     <div id="characters-list">
         {% for elem in data %}
             <div>
-                <a href="?name={{ elem.name }}">
+                <a href="?name={{ elem.name | replace({' ': ''}) }}">
                     <img src="assets/icons/{{ elem.name | replace({' ': ''}) }}.png"/>
                 </a>
             </div>
