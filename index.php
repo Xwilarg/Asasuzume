@@ -18,11 +18,24 @@ foreach (new DirectoryIterator('./assets/data') as $fileInfo) {
         echo $twig->render("character.html.twig", [
             "data" => $content,
             "audio" => [
-                "bond1", "bond2", "bond3", "bond4", "bond5",
-                "lobby1", "lobby2", "lobby3", "lobby4", "lobby5", "lobby6", "lobby7", "lobby8",
-                "login_normal", "login_max",
-                "gift_normal", "gift_preferred",
-                "obtained"
+                "bond1" => "Bond Lvl 1",
+                "bond2" => "Bond Lvl 2",
+                "bond3" => "Bond Lvl 3",
+                "bond4" => "Bond Lvl 4",
+                "bond5" => "Bond Lvl 5",
+                "lobby1" => "Lobby 1",
+                "lobby2" => "Lobby 2",
+                "lobby3" => "Lobby 3",
+                "lobby4" => "Lobby 4",
+                "lobby5" => "Lobby 5",
+                "lobby6" => "Lobby 6",
+                "lobby7" => "Lobby 7",
+                "login_normal" => "Login",
+                "login_max" => "Login (Max Bond)",
+                "gift_normal" => "Gift",
+                "gift_preferred" => "Gift (Preferred)",
+                "first" => "First Place",
+                "obtained" => "Obtained"
             ]
         ]);
         return;
