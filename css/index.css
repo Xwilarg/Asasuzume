@@ -1,4 +1,10 @@
+html {
+    text-align: center;
+}
+
 #characters-list {
+    margin-top: 3em;
+    margin-bottom: 25em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,6 +12,9 @@
 
 #characters-list img {
     width: 150px;
+    border-radius: 25px;
+    border: 1px solid grey;
+    margin: 3px;
 }
 
 table {

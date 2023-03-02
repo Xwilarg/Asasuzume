@@ -9,12 +9,14 @@
     <div id="characters-list">
         {% for elem in data %}
             <div>
+                {{ elem.name }}<br/>
                 <a href="?name={{ elem.name | replace({' ': ''}) }}">
                     <img src="assets/icons/{{ elem.name | replace({' ': ''}) }}.png"/>
                 </a>
             </div>
         {% endfor %}
     </div>
+    <hr/>
     <p>
         Source code and contribution guide available on <a href="https://github.com/Xwilarg/Asasuzume" target="_blank">GitHub</a><br/>
         <br/>
