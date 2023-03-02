@@ -15,12 +15,12 @@
             <tbody>
             {% for file in audio %}
                 <tr>
-                    <td>{{ file }}</td>
-                    <td><a href="assets/audio/{{ data.name | replace({' ': ''}) }}/{{ file }}.mp3"><span class="material-symbols-outlined">play_arrow</span></a></td>
-                    <td>{{ data[file].en }}</td>
-                    <td>{{ data[file].jp }}</td>
-                    <td>{{ data[file].cn }}</td>
-                    <td>{{ data[file].kr }}</td>
+                    <td class="name">{{ file }}</td>
+                    <td class="audio"><a href="assets/audio/{{ data.name | replace({' ': ''}) }}/{{ file }}.mp3"><span class="material-symbols-outlined">play_arrow</span></a></td>
+                    <td class="lang">{{ data[file].en }}</td>
+                    <td class="lang">{{ data[file].jp }}</td>
+                    <td class="lang">{{ data[file].cn }}</td>
+                    <td class="lang">{{ data[file].kr }}</td>
                 </tr>
             {% endfor %}
             </tbody>

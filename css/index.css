@@ -22,3 +22,7 @@ td, th {
 tr:nth-child(even) {
     background-color: #b1c0c4;
 }
+
+td.lang {
+    width: 20vw;
+}
