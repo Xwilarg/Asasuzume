@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h2>{{ data.name }}</h2>
+    <div>
+        <table>
+            <thead>
+                <th>Name</th>
+                <th></th>
+                <th>English</th>
+                <th>Japanese</th>
+                <th>Chinese</th>
+                <th>Korean</th>
+            </thead>
+            <tbody>
+            {% for file in audio %}
+                <tr>
+                    <td>{{ file }}</td>
+                    <td><a href="assets/audio/{{ data.name | replace({' ': ''}) }}/{{ file }}.mp3"><span class="material-symbols-outlined">play_arrow</span></a></td>
+                    <td>{{ data[file].en }}</td>
+                    <td>{{ data[file].jp }}</td>
+                    <td>{{ data[file].cn }}</td>
+                    <td>{{ data[file].kr }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

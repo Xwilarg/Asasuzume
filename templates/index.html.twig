@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div id="characters-list">
+        {% for elem in data %}
+            <div>
+                <a href="?name={{ elem.name }}">
+                    <img src="assets/icons/{{ elem.name | replace({' ': ''}) }}.png"/>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
