@@ -48,6 +48,7 @@ foreach (new DirectoryIterator('./assets/data') as $fileInfo) {
 
 // Stats about what is translated
 $stats = [];
+$tt = 0;
 foreach ($data as $elem) {
     $en = 0;
     $jp = 0;
@@ -60,13 +61,14 @@ foreach ($data as $elem) {
             if ($elem[$a]["kr"] !== "") $kr++;
             if ($elem[$a]["cn"] !== "") $cn++;
         }
-        $stats[$elem["name"]] = [
-            "en" => $en,
-            "jp" => $jp,
-            "kr" => $kr,
-            "cn" => $cn
-        ];
     }
+    $tt += $en + $jp + $kr + $cn;
+    $stats[$elem["name"]] = [
+        "en" => $en,
+        "jp" => $jp,
+        "kr" => $kr,
+        "cn" => $cn
+    ];
 }
 
 echo $twig->render("index.html.twig", [
@@ -75,6 +77,7 @@ echo $twig->render("index.html.twig", [
         "characters" => count($data),
         "charactersTotal" => iterator_count(new DirectoryIterator('./assets/audio')) - 2, // Remove .. and .
         "details" => $stats,
-        "audioCount" => count($audioList)
+        "audioCount" => count($audioList),
+        "total" => $tt
     ]
 ]);

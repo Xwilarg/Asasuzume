@@ -13,6 +13,7 @@ html {
 
 #characters-list img {
     width: 150px;
+    height: 150px;
     border-radius: 25px;
     border: 1px solid grey;
     margin: 3px;

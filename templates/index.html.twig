@@ -21,10 +21,11 @@
         Source code and contribution guide available on <a href="https://github.com/Xwilarg/Asasuzume" target="_blank">GitHub</a><br/>
         <br/>
         Characters: {{ stats.characters }} / {{ stats.charactersTotal }}<br/>
+        Global Progression: {{ (stats.total * 100 / (stats.charactersTotal * stats.audioCount * 4)) | round(0, 'floor') }}%<br/>
         Details:<br/>
         <br/>
         {% for key, value in stats.details %}
-            {{ key }}: {{ (value.en + value.jp + value.cn + value.kr * 100 / stats.audioCount / 4) | round(0, 'floor') }}%<br/>
+            {{ key }}: {{ ((value.en + value.jp + value.cn + value.kr) * 100 / (stats.audioCount * 4)) | round(0, 'floor') }}%<br/>
             - English: {{ (value.en * 100 / stats.audioCount) | round(0, 'floor') }}%<br/>
             - Japanese: {{ (value.jp * 100 / stats.audioCount) | round(0, 'floor') }}%<br/>
             - Korean: {{ (value.kr * 100 / stats.audioCount) | round(0, 'floor') }}%<br/>
