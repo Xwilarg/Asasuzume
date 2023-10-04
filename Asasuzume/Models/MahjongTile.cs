@@ -2,6 +2,11 @@
 {
     public class MahjongTile
     {
-        public string ImagePath;
+        public MahjongTile(string imagePath)
+        {
+            ImagePath = imagePath;
+        }
+
+        public string ImagePath { set; get; }
     }
 }

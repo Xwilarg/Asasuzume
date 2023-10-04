@@ -19,7 +19,6 @@
 		<ItemsControl Grid.Row="1"
 					  HorizontalAlignment="Center"
 					  ItemsSource="{Binding Items}">
-			<Image Source="/Assets/Bamboo5.svg"></Image>
 			<ItemsControl.ItemsPanel>
 				<ItemsPanelTemplate>
 					<StackPanel Orientation="Horizontal"/>
@@ -27,7 +26,7 @@
 			</ItemsControl.ItemsPanel>
 			<ItemsControl.ItemTemplate>
 				<DataTemplate>
-					<Image Source="{Binding ImagePath}"/>
+					<Svg Path="{Binding ImagePath}"/>
 				</DataTemplate>
 			</ItemsControl.ItemTemplate>
 		</ItemsControl>
