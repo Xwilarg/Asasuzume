@@ -1,6 +1,15 @@
-﻿namespace Asasuzume.ViewModels;
+﻿using Asasuzume.Models;
+using System.Collections.ObjectModel;
+
+namespace Asasuzume.ViewModels;
 
 public class MainViewModel : ViewModelBase
 {
-    public string Greeting => "Welcome to Avalonia!";
+    public MainViewModel()
+    {
+        _items.Add(new() { ImagePath = "Bamboo5" });
+    }
+
+    private readonly ObservableCollection<MahjongTile> _items = new();
+
 }
