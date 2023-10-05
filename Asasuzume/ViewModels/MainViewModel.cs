@@ -10,14 +10,16 @@ public class MainViewModel : ViewModelBase
     public MainViewModel()
     {
         var deck = Locator.Current.GetService<IGameManager>()!;
-        _player = new HumanPlayer();
-        deck.RegisterPlayer(_player);
-        deck.RegisterPlayer(new AIPlayer());
-        deck.RegisterPlayer(new AIPlayer());
-        deck.RegisterPlayer(new AIPlayer());
+        Human = new HumanPlayer();
+        Players = new APlayer[] { Human, new AIPlayer(), new AIPlayer(), new AIPlayer() };
+        foreach (var p in Players)
+        {
+            deck.RegisterPlayer(p);
+        }
     }
 
-    public ObservableCollection<MahjongTile> Items => _player.Deck;
+    public ObservableCollection<MahjongTile> Items => Human.Deck;
 
-    private HumanPlayer _player;
+    private HumanPlayer Human { init; get; }
+    private APlayer[] Players { init; get; }
 }

@@ -16,6 +16,41 @@
 			<RowDefinition Height="250"></RowDefinition>
 		</Grid.RowDefinitions>
 
+		<UniformGrid Grid.Row="0" Columns="2" Rows="2">
+			<ItemsControl Grid.Row="0" Grid.Column="0"
+					  HorizontalAlignment="Center"
+					  ItemsSource="{Binding Players[0].Discarded}">
+				<ItemsControl.ItemsPanel>
+					<ItemsPanelTemplate>
+						<WrapPanel Orientation="Horizontal" VerticalAlignment="Bottom"/>
+					</ItemsPanelTemplate>
+				</ItemsControl.ItemsPanel>
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<Border Height="50" BorderBrush="Gray" BorderThickness="1" Margin="2" CornerRadius="3">
+							<Svg Path="{Binding ImagePath}"/>
+						</Border>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+			<ItemsControl Grid.Row="0" Grid.Column="1"
+						  HorizontalAlignment="Center"
+						  ItemsSource="{Binding Players[1].Discarded}">
+				<ItemsControl.ItemsPanel>
+					<ItemsPanelTemplate>
+						<WrapPanel Orientation="Horizontal" VerticalAlignment="Bottom"/>
+					</ItemsPanelTemplate>
+				</ItemsControl.ItemsPanel>
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<Border Height="50" BorderBrush="Gray" BorderThickness="1" Margin="2" CornerRadius="3">
+							<Svg Path="{Binding ImagePath}"/>
+						</Border>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</UniformGrid>
+
 		<ItemsControl Grid.Row="1"
 					  HorizontalAlignment="Center"
 					  ItemsSource="{Binding Items}">
