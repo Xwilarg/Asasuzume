@@ -9,26 +9,33 @@ namespace Asasuzume.Models.Services
         public MahjongDeck()
         {
             // Fill deck with all tiles
-            var categories = new[] { "Bamboo", "Character", "Dot" };
+            var categories = new[] { TileType.DOT, TileType.CHARACTER, TileType.BAMBOO };
             foreach (var c in categories)
             {
+                var catStr = c.ToString()[0] + c.ToString()[1..].ToLowerInvariant();
+
                 for (int i = 1; i < 10; i++)
                 {
                     if (i == 5 && useRedFives)
                     {
-                        _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{c}5.svg"), 3));
-                        _refDeck.Add(new($"{TilePath}{c}5Red.svg"));
+                        _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{catStr}5.svg", c, 5), 3));
+                        _refDeck.Add(new($"{TilePath}{catStr}5Red.svg", c, 5));
                     }
                     else
                     {
-                        _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{c}{i}.svg"), 4));
+                        _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{catStr}{i}.svg", c, i), 4));
                     }
                 }
             }
-            var otherTiles = new[] { "East", "West", "North", "South", "Red", "White", "Green" };
-            foreach (var t in otherTiles)
+            var winds = new[] { "East", "West", "North", "South" };
+            foreach (var w in winds)
             {
-                _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{t}.svg"), 4));
+                _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{w}.svg", TileType.WIND, -1), 4)); // TODO: -1
+            }
+            var dragons = new[] { "Green", "White", "Red" };
+            foreach (var d in dragons)
+            {
+                _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{d}.svg", TileType.DRAGON, -1), 4)); // TODO: -1
             }
 
             _deck = new(_refDeck);

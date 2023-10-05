@@ -4,12 +4,16 @@ namespace Asasuzume.Models
 {
     public class MahjongTile
     {
-        public MahjongTile(string imagePath)
+        public MahjongTile(string imagePath, TileType tileType, int value)
         {
             ImagePath = imagePath;
+            TileType = tileType;
+            Value = value;
         }
 
         public string ImagePath { set; get; }
+        public TileType TileType;
+        public int Value;
         public ICommand OnTileSelected { set; get; }
     }
 }
