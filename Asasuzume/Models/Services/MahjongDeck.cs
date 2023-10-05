@@ -31,12 +31,12 @@ namespace Asasuzume.Models.Services
             var winds = new[] { "East", "West", "North", "South" };
             foreach (var w in winds)
             {
-                _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{w}.svg", TileType.WIND, -1), 4)); // TODO: -1
+                _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{w}.svg", TileType.WIND, 0), 4)); // TODO: Right value
             }
             var dragons = new[] { "Green", "White", "Red" };
             foreach (var d in dragons)
             {
-                _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{d}.svg", TileType.DRAGON, -1), 4)); // TODO: -1
+                _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{d}.svg", TileType.DRAGON, 0), 4)); // TODO: Right value
             }
 
             _deck = new(_refDeck);

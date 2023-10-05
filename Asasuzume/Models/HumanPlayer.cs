@@ -1,4 +1,5 @@
 ﻿using Asasuzume.Models.Services;
+using DynamicData;
 using ReactiveUI;
 using Splat;
 using System.Linq;
@@ -27,10 +28,8 @@ namespace Asasuzume.Models
         private void SortDeck()
         {
             var newDeck = Deck.OrderBy(x => ((int)x.TileType * 10) + x.Value).ToArray();
-            for (int i = 0; i < newDeck.Length; i++)
-            {
-                Deck.Move(Deck.IndexOf(newDeck[i]), i);
-            }
+            Deck.Clear();
+            Deck.AddRange(newDeck);
         }
     }
 }
