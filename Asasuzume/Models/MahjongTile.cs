@@ -11,6 +11,11 @@ namespace Asasuzume.Models
             Value = value;
         }
 
+        public override string ToString()
+        {
+            return $"{TileType}{Value}";
+        }
+
         public string ImagePath { set; get; }
         public TileType TileType;
         public int Value;

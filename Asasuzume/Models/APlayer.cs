@@ -36,7 +36,7 @@ namespace Asasuzume.Models
             Deck.Add(tile);
         }
 
-        public ObservableCollection<MahjongTile> Deck { get; } = new();
+        public ObservableCollection<MahjongTile> Deck { set; get; } = new();
         public ObservableCollection<MahjongTile> Discarded { get; } = new();
     }
 }

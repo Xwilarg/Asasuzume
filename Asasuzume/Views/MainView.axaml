@@ -12,7 +12,7 @@
 	</Design.DataContext>
 
 	<UserControl.DataTemplates>
-		<DataTemplate DataType="{x:Type m:HumanPlayer}">
+		<DataTemplate DataType="{x:Type m:APlayer}">
 			<ItemsControl HorizontalAlignment="Center" ItemsSource="{Binding Discarded}">
 				<ItemsControl.ItemsPanel>
 					<ItemsPanelTemplate>
@@ -40,7 +40,10 @@
 					 Columns="2"
 					 Rows="2">
 
-			<ContentControl Content="{Binding Human}"></ContentControl>
+			<ContentControl Grid.Row="0" Grid.Column="0" Content="{Binding Players[0]}"></ContentControl>
+			<ContentControl Grid.Row="1" Grid.Column="0" Content="{Binding Players[1]}"></ContentControl>
+			<ContentControl Grid.Row="0" Grid.Column="1" Content="{Binding Players[2]}"></ContentControl>
+			<ContentControl Grid.Row="1" Grid.Column="1" Content="{Binding Players[3]}"></ContentControl>
 
 		</UniformGrid>
 
