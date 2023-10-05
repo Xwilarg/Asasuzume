@@ -12,7 +12,7 @@ namespace Asasuzume.Models
             var deck = Locator.Current.GetService<IMahjongDeck>()!;
             for (int i = 0; i < 13; i++)
             {
-                Deck.Add(deck.DrawTile());
+                AddTile(deck.DrawTile());
             }
         }
 
@@ -24,6 +24,14 @@ namespace Asasuzume.Models
             }
             Discarded.Add(tile);
             Deck.Remove(tile);
+        }
+
+        public virtual void StartTurn()
+        { }
+
+        public virtual void AddTile(MahjongTile tile)
+        {
+            Deck.Add(tile);
         }
 
         public ObservableCollection<MahjongTile> Deck { get; } = new();

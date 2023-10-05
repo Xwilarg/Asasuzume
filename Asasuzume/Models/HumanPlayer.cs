@@ -6,16 +6,14 @@ namespace Asasuzume.Models
 {
     public class HumanPlayer : APlayer
     {
-        public HumanPlayer()
-            : base()
+        public override void AddTile(MahjongTile tile)
         {
-            foreach (var card in Deck)
+            base.AddTile(tile);
+            tile.OnTileSelected = ReactiveCommand.Create(() =>
             {
-                card.OnTileSelected = ReactiveCommand.Create(() =>
-                {
-                    Locator.Current.GetService<IGameManager>()!.EndTurn();
-                });
-            }
+                Discard(tile);
+                Locator.Current.GetService<IGameManager>()!.EndTurn();
+            });
         }
     }
 }
