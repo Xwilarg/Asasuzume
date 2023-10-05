@@ -27,7 +27,9 @@
 			<ItemsControl.ItemTemplate>
 				<DataTemplate>
 					<Border BorderBrush="Gray" BorderThickness="1" Margin="5" CornerRadius="3">
-						<Svg Path="{Binding ImagePath}"/>
+						<Button Background="Black" Command="{Binding OnTileSelected}">
+							<Svg Path="{Binding ImagePath}"/>
+						</Button>
 					</Border>
 				</DataTemplate>
 			</ItemsControl.ItemTemplate>
