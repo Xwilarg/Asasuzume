@@ -10,33 +10,31 @@ namespace Asasuzume.Models.Services
         public MahjongDeck()
         {
             // Fill deck with all tiles
-            var categories = new[] { TileType.DOT, TileType.CHARACTER, TileType.BAMBOO };
+            var categories = new[] { TileType.Dot, TileType.Character, TileType.Bamboo };
             foreach (var c in categories)
             {
-                var catStr = c.ToString()[0] + c.ToString()[1..].ToLowerInvariant();
-
                 for (int i = 1; i < 10; i++)
                 {
                     if (i == 5 && useRedFives)
                     {
-                        _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{catStr}5.svg", c, 5), 3));
-                        _refDeck.Add(new($"{TilePath}{catStr}5Red.svg", c, 5));
+                        _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{c}5.svg", c, 5), 3));
+                        _refDeck.Add(new($"{TilePath}{c}5Red.svg", c, 5));
                     }
                     else
                     {
-                        _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{catStr}{i}.svg", c, i), 4));
+                        _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{c}{i}.svg", c, i), 4));
                     }
                 }
             }
             var winds = new[] { "East", "West", "North", "South" };
             foreach (var w in winds)
             {
-                _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{w}.svg", TileType.WIND, 0), 4)); // TODO: Right value
+                _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{w}.svg", TileType.Wind, 0), 4)); // TODO: Right value
             }
             var dragons = new[] { "Green", "White", "Red" };
             foreach (var d in dragons)
             {
-                _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{d}.svg", TileType.DRAGON, 0), 4)); // TODO: Right value
+                _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{d}.svg", TileType.Dragon, 0), 4)); // TODO: Right value
             }
 
             _deck = new(_refDeck);

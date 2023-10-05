@@ -2,10 +2,10 @@
 {
     public enum TileType
     {
-        DOT,
-        CHARACTER,
-        BAMBOO,
-        WIND,
-        DRAGON
+        Dot,
+        Character,
+        Bamboo,
+        Wind,
+        Dragon
     }
 }
