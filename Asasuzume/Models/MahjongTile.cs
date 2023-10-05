@@ -10,7 +10,6 @@ namespace Asasuzume.Models
             ImagePath = imagePath;
             OnTileSelected = ReactiveCommand.Create(() =>
             {
-
             });
         }
 

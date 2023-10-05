@@ -20,6 +20,7 @@ public partial class App : Application
     public override void OnFrameworkInitializationCompleted()
     {
         Locator.CurrentMutable.Register<IMahjongDeck>(() => new MahjongDeck());
+        Locator.CurrentMutable.Register<IGameManager>(() => new GameManager());
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {

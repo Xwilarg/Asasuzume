@@ -1,19 +1,23 @@
 ﻿using Asasuzume.Models;
-using DynamicData;
+using Asasuzume.Models.Services;
 using Splat;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 
 namespace Asasuzume.ViewModels;
 
 public class MainViewModel : ViewModelBase
 {
     public MainViewModel()
-    { }
+    {
+        _player = new();
+        var deck = Locator.Current.GetService<IGameManager>()!;
+        deck.RegisterPlayer(_player);
+        deck.RegisterPlayer(new());
+        deck.RegisterPlayer(new());
+        deck.RegisterPlayer(new());
+    }
 
-    private ObservableCollection<MahjongTile> Items => _gm.HumanPlayer.Deck;
+    public ObservableCollection<MahjongTile> Items => _player.Deck;
 
-    private GameManager _gm = new();
+    private Player _player;
 }
