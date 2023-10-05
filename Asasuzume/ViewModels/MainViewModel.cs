@@ -12,12 +12,12 @@ public class MainViewModel : ViewModelBase
         _player = new();
         var deck = Locator.Current.GetService<IGameManager>()!;
         deck.RegisterPlayer(_player);
-        deck.RegisterPlayer(new());
-        deck.RegisterPlayer(new());
-        deck.RegisterPlayer(new());
+        deck.RegisterPlayer(new AIPlayer());
+        deck.RegisterPlayer(new AIPlayer());
+        deck.RegisterPlayer(new AIPlayer());
     }
 
     public ObservableCollection<MahjongTile> Items => _player.Deck;
 
-    private Player _player;
+    private HumanPlayer _player;
 }

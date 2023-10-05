@@ -1,5 +1,4 @@
-﻿using ReactiveUI;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
 namespace Asasuzume.Models
 {
@@ -8,9 +7,6 @@ namespace Asasuzume.Models
         public MahjongTile(string imagePath)
         {
             ImagePath = imagePath;
-            OnTileSelected = ReactiveCommand.Create(() =>
-            {
-            });
         }
 
         public string ImagePath { set; get; }

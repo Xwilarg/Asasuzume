@@ -1,13 +1,13 @@
 ﻿using Asasuzume.Models.Services;
 using Splat;
-using System;
 using System.Collections.ObjectModel;
+using System;
 
 namespace Asasuzume.Models
 {
-    public class Player
+    public abstract class APlayer
     {
-        public Player()
+        public APlayer()
         {
             var deck = Locator.Current.GetService<IMahjongDeck>()!;
             for (int i = 0; i < 13; i++)

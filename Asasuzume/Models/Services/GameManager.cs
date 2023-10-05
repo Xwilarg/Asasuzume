@@ -4,16 +4,15 @@ namespace Asasuzume.Models.Services
 {
     public class GameManager : IGameManager
     {
-        public void NextTurn()
+        public void EndTurn()
         {
-            throw new System.NotImplementedException();
         }
 
-        public void RegisterPlayer(Player player)
+        public void RegisterPlayer(APlayer player)
         {
             _players.Add(player);
         }
 
-        private readonly List<Player> _players = new();
+        private readonly List<APlayer> _players = new();
     }
 }

@@ -2,7 +2,7 @@
 {
     public interface IGameManager
     {
-        public void NextTurn();
-        public void RegisterPlayer(Player player);
+        public void EndTurn();
+        public void RegisterPlayer(APlayer player);
     }
 }
