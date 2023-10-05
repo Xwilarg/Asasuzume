@@ -1,4 +1,5 @@
 ﻿using Asasuzume.Models;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -35,11 +36,13 @@ public class MainViewModel : ViewModelBase
         }
 
         // Fill hand
-        for (int i = 0; i < _tiles.Count; i++)
+        Random rand = new();
+        for (int i = 0; i < 14; i++)
         {
-           // var rand = 
+            var nb = rand.Next(_tiles.Count);
+            Items.Add(_tiles[nb]);
+            _tiles.RemoveAt(nb);
         }
-        Items.Add(new("/Assets/Bamboo5.svg"));
     }
 
     private ObservableCollection<MahjongTile> Items { get; } = new();
