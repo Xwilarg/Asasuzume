@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Asasuzume.Models
+namespace Asasuzume.Models.Services
 {
     public class MahjongDeck : IMahjongDeck
     {

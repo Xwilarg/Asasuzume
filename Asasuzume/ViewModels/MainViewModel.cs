@@ -10,14 +10,10 @@ namespace Asasuzume.ViewModels;
 
 public class MainViewModel : ViewModelBase
 {
-
     public MainViewModel()
-    {
-        for (int i = 0; i < 14; i++)
-        {
-            Items.Add(Locator.Current.GetService<IMahjongDeck>()!.DrawTile());
-        }
-    }
+    { }
 
-    private ObservableCollection<MahjongTile> Items { get; } = new();
+    private ObservableCollection<MahjongTile> Items => _gm.HumanPlayer.Deck;
+
+    private GameManager _gm = new();
 }

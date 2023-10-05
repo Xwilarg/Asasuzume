@@ -1,4 +1,4 @@
-﻿namespace Asasuzume.Models
+﻿namespace Asasuzume.Models.Services
 {
     public interface IMahjongDeck
     {
