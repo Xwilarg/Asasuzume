@@ -1,5 +1,4 @@
-﻿using Asasuzume.Models;
-using Asasuzume.Models.Services;
+﻿using Asasuzume.Models.Services;
 using Asasuzume.ViewModels;
 using Asasuzume.Views;
 
@@ -19,8 +18,8 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
-        Locator.CurrentMutable.Register<IMahjongDeck>(() => new MahjongDeck());
-        Locator.CurrentMutable.Register<IGameManager>(() => new GameManager());
+        Locator.CurrentMutable.RegisterConstant<IMahjongDeck>(new MahjongDeck());
+        Locator.CurrentMutable.RegisterConstant<IGameManager>(new GameManager());
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {

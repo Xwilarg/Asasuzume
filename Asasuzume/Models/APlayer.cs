@@ -27,7 +27,9 @@ namespace Asasuzume.Models
         }
 
         public virtual void StartTurn()
-        { }
+        {
+            AddTile(Locator.Current.GetService<IMahjongDeck>()!.DrawTile());
+        }
 
         public virtual void AddTile(MahjongTile tile)
         {
