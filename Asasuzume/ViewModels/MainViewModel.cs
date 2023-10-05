@@ -9,8 +9,8 @@ public class MainViewModel : ViewModelBase
 {
     public MainViewModel()
     {
-        _player = new();
         var deck = Locator.Current.GetService<IGameManager>()!;
+        _player = new HumanPlayer();
         deck.RegisterPlayer(_player);
         deck.RegisterPlayer(new AIPlayer());
         deck.RegisterPlayer(new AIPlayer());
