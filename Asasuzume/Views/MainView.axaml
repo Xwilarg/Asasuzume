@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:Asasuzume.ViewModels"
+			 xmlns:v="clr-namespace:Asasuzume.Views"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Asasuzume.Views.MainView"
              x:DataType="vm:MainViewModel">
@@ -15,6 +16,11 @@
 			<RowDefinition Height="*"></RowDefinition>
 			<RowDefinition Height="250"></RowDefinition>
 		</Grid.RowDefinitions>
+
+		<UniformGrid Grid.Row="0" Rows="2" Columns="2">
+			<v:DiscardView Grid.Row="0" Grid.Column="0"></v:DiscardView>
+		</UniformGrid>
+
 
 		<ItemsControl Grid.Row="1"
 					  HorizontalAlignment="Center"
