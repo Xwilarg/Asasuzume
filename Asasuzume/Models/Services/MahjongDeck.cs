@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Avalonia.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -45,7 +46,11 @@ namespace Asasuzume.Models.Services
         {
             var nb = _rand.Next(_deck.Count);
             var tile = _deck[nb];
-            _deck.RemoveAt(nb);
+
+            if (!Design.IsDesignMode) // Preview XAML designer to run out of tiles
+            {
+                _deck.RemoveAt(nb);
+            }
             return tile;
         }
 
