@@ -70,11 +70,11 @@
 					Margin="0 0 50 0"
 					Orientation="Horizontal"
 					Spacing="20">
-			<Button Classes="ActionButton" Background="LightBlue"><Label Content="{x:Static lang:Resources.Chii}"></Label></Button>
-			<Button Classes="ActionButton" Background="LightGreen"><Label Content="{x:Static lang:Resources.Kan}"></Label></Button>
-			<Button Classes="ActionButton" Background="LightPink"><Label Content="{x:Static lang:Resources.Pon}"></Label></Button>
-			<Button Classes="ActionButton" Background="Salmon"><Label Content="{x:Static lang:Resources.Ron} / {x:Static lang:Resources.Tsumo}"></Label></Button>
-			<Button Classes="ActionButton" Background="LightGray"><Label Content="{x:Static lang:Resources.Draw}"></Label></Button>
+			<Button Classes="ActionButton" Background="LightBlue" Command="{Binding Chii}"><Label Content="{x:Static lang:Resources.Chii}"></Label></Button>
+			<Button Classes="ActionButton" Background="LightGreen" Command="{Binding Kan}"><Label Content="{x:Static lang:Resources.Kan}"></Label></Button>
+			<Button Classes="ActionButton" Background="LightPink" Command="{Binding Pon}"><Label Content="{x:Static lang:Resources.Pon}"></Label></Button>
+			<Button Classes="ActionButton" Background="Salmon" Command="{Binding Ron}"><Label Content="{x:Static lang:Resources.Ron} / {x:Static lang:Resources.Tsumo}"></Label></Button>
+			<Button Classes="ActionButton" Background="LightGray" Command="{Binding Draw}"><Label Content="{x:Static lang:Resources.Draw}"></Label></Button>
 		</StackPanel>
 
 		<ItemsControl Grid.Row="2"

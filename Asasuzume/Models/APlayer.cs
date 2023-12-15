@@ -2,6 +2,7 @@
 using Splat;
 using System.Collections.ObjectModel;
 using System;
+using System.Linq;
 
 namespace Asasuzume.Models
 {
@@ -38,5 +39,7 @@ namespace Asasuzume.Models
 
         public ObservableCollection<MahjongTile> Deck { set; get; } = new();
         public ObservableCollection<MahjongTile> Discarded { get; } = new();
+
+        public MahjongTile? LastDiscarded => Discarded.Any() ? Discarded[^1] : null;
     }
 }

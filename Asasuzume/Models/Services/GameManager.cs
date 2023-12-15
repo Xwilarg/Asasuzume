@@ -26,6 +26,11 @@ namespace Asasuzume.Models.Services
             _players.Add(player);
         }
 
+        public MahjongTile? LastThrownTile => _players[_turnIndex].LastDiscarded;
+
+        public bool IsMyTurnCurrent(int me) => _turnIndex == me;
+        public bool IsMyTurnNext(int me) => (me == 0 && _turnIndex == _players.Count - 1) || _turnIndex == me - 1;
+
         private readonly List<APlayer> _players = new();
         private int _turnIndex;
     }
