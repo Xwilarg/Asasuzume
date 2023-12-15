@@ -11,9 +11,12 @@ namespace Asasuzume.Views
     {
         public static readonly StyledProperty<APlayer> PlayerProperty =
         AvaloniaProperty.Register<PlayerHandView, APlayer>("Player", defaultValue: null,
-            defaultBindingMode: BindingMode.TwoWay);
+            defaultBindingMode: BindingMode.OneWay);
 
-        public APlayer Player { get; set; }
+        public APlayer Player
+        {
+            get => GetValue(PlayerProperty);
+        }
 
         public PlayerHandView()
         {
@@ -21,7 +24,7 @@ namespace Asasuzume.Views
 
             this.WhenActivated(_ =>
             {
-                var p = GetValue(PlayerProperty);
+                ViewModel.Player = GetValue(PlayerProperty);
                 ;
             });
         }
