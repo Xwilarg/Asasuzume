@@ -120,4 +120,22 @@
   <data name="Chii" xml:space="preserve">
     <value>チー</value>
   </data>
+  <data name="Draw" xml:space="preserve">
+    <value>途中流局</value>
+  </data>
+  <data name="Kan" xml:space="preserve">
+    <value>カン</value>
+  </data>
+  <data name="Pon" xml:space="preserve">
+    <value>ポン</value>
+  </data>
+  <data name="Riichi" xml:space="preserve">
+    <value>フリテン</value>
+  </data>
+  <data name="Ron" xml:space="preserve">
+    <value>ロン</value>
+  </data>
+  <data name="Tsumo" xml:space="preserve">
+    <value>ツモ</value>
+  </data>
 </root>

@@ -68,5 +68,59 @@ namespace Asasuzume.Assets.Lang {
                 return ResourceManager.GetString("Chii", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Abortive Draw.
+        /// </summary>
+        public static string Draw {
+            get {
+                return ResourceManager.GetString("Draw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kan.
+        /// </summary>
+        public static string Kan {
+            get {
+                return ResourceManager.GetString("Kan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pon.
+        /// </summary>
+        public static string Pon {
+            get {
+                return ResourceManager.GetString("Pon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Riichi.
+        /// </summary>
+        public static string Riichi {
+            get {
+                return ResourceManager.GetString("Riichi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ron.
+        /// </summary>
+        public static string Ron {
+            get {
+                return ResourceManager.GetString("Ron", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tsumo.
+        /// </summary>
+        public static string Tsumo {
+            get {
+                return ResourceManager.GetString("Tsumo", resourceCulture);
+            }
+        }
     }
 }

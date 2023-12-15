@@ -10,11 +10,6 @@
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
 
-  
-  <ItemGroup>
-    <EmbeddedResource Remove="Assets\Lang\Resources.ja-JP.resx" />
-  </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.0.4" />
     <PackageReference Include="Avalonia.Svg.Skia" Version="11.0.0.2" />

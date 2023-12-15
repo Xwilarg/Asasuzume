@@ -22,8 +22,6 @@ public partial class App : Application
         Locator.CurrentMutable.RegisterConstant<IMahjongDeck>(new MahjongDeck());
         Locator.CurrentMutable.RegisterConstant<IGameManager>(new GameManager());
 
-        Assets.Lang.Resources.Culture = new CultureInfo("ja-JP");
-
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             desktop.MainWindow = new MainWindow
