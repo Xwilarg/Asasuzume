@@ -2,8 +2,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:v="clr-namespace:Asasuzume.Views"
              xmlns:vm="clr-namespace:Asasuzume.ViewModels"
-             xmlns:m="clr-namespace:Asasuzume.Models"
 			 xmlns:lang="clr-namespace:Asasuzume.Assets.Lang"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
              x:Class="Asasuzume.Views.MainView"
@@ -27,25 +27,6 @@
 		</Style>
 	</UserControl.Styles>
 
-	<UserControl.DataTemplates>
-		<DataTemplate DataType="{x:Type m:APlayer}">
-			<ItemsControl HorizontalAlignment="Center" ItemsSource="{Binding Discarded}">
-				<ItemsControl.ItemsPanel>
-					<ItemsPanelTemplate>
-						<WrapPanel Orientation="Horizontal" VerticalAlignment="Bottom"/>
-					</ItemsPanelTemplate>
-				</ItemsControl.ItemsPanel>
-				<ItemsControl.ItemTemplate>
-					<DataTemplate>
-						<Border Height="50" BorderBrush="Gray" BorderThickness="1" Margin="2" CornerRadius="3">
-							<Svg Path="{Binding ImagePath}"/>
-						</Border>
-					</DataTemplate>
-				</ItemsControl.ItemTemplate>
-			</ItemsControl>
-		</DataTemplate>
-	</UserControl.DataTemplates>
-
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="*"></RowDefinition>
@@ -57,11 +38,12 @@
 					 Columns="2"
 					 Rows="2">
 
-			<ContentControl Grid.Row="0" Grid.Column="0" Content="{Binding Players[0]}"></ContentControl>
-			<ContentControl Grid.Row="1" Grid.Column="0" Content="{Binding Players[1]}"></ContentControl>
-			<ContentControl Grid.Row="0" Grid.Column="1" Content="{Binding Players[2]}"></ContentControl>
-			<ContentControl Grid.Row="1" Grid.Column="1" Content="{Binding Players[3]}"></ContentControl>
+			<v:PlayerHandView Grid.Row="0" Grid.Column="0" Player="{Binding Players[0]}"></v:PlayerHandView>
+			<v:PlayerHandView Grid.Row="0" Grid.Column="0" Player="{Binding Players[1]}"></v:PlayerHandView>
+			<v:PlayerHandView Grid.Row="0" Grid.Column="0" Player="{Binding Players[2]}"></v:PlayerHandView>
+			<v:PlayerHandView Grid.Row="0" Grid.Column="0" Player="{Binding Players[3]}"></v:PlayerHandView>
 
+		
 		</UniformGrid>
 
 		<StackPanel Grid.Row="1"
