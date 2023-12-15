@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:Asasuzume.ViewModels"
              xmlns:m="clr-namespace:Asasuzume.Models"
+			 xmlns:lang="clr-namespace:Asasuzume.Assets.Lang"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
              x:Class="Asasuzume.Views.MainView"
              x:DataType="vm:MainViewModel">
@@ -64,7 +65,7 @@
 					Margin="0 0 50 0"
 					Orientation="Horizontal"
 					Spacing="20">
-			<Button Classes="ActionButton" Background="LightBlue"><Label>Chii</Label></Button>
+			<Button Classes="ActionButton" Background="LightBlue"><Label Content="{x:Static lang:Resources.Chii}"></Label></Button>
 			<Button Classes="ActionButton" Background="LightGreen"><Label>Pon</Label></Button>
 			<Button Classes="ActionButton" Background="LightPink"><Label>Kan</Label></Button>
 			<Button Classes="ActionButton" Background="Salmon"><Label>Ron</Label></Button>

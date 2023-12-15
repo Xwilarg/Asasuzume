@@ -6,6 +6,7 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Splat;
+using System.Globalization;
 
 namespace Asasuzume;
 
@@ -20,6 +21,8 @@ public partial class App : Application
     {
         Locator.CurrentMutable.RegisterConstant<IMahjongDeck>(new MahjongDeck());
         Locator.CurrentMutable.RegisterConstant<IGameManager>(new GameManager());
+
+        Assets.Lang.Resources.Culture = new CultureInfo("ja-JP");
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
