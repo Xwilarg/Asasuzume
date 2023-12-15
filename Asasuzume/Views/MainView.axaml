@@ -19,11 +19,11 @@
 			<Setter Property="VerticalContentAlignment" Value="Center"></Setter>
 			<Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
 		</Style>
-		<Style Selector="ContentPresenter">
+		<Style Selector=".Hand > ContentPresenter">
 			<Setter Property="Margin" Value="5"></Setter>
 		</Style>
-		<Style Selector="ContentPresenter:nth-child(2n)">
-			<Setter Property="Margin" Value="50"></Setter>
+		<Style Selector=".Hand > ContentPresenter:nth-last-child(1)">
+			<Setter Property="Margin" Value="20 0 0 0"></Setter>
 		</Style>
 	</UserControl.Styles>
 
@@ -79,7 +79,8 @@
 
 		<ItemsControl Grid.Row="2"
 					  HorizontalAlignment="Center"
-					  ItemsSource="{Binding Items}">
+					  ItemsSource="{Binding Items}"
+					  Classes="Hand">
 			<ItemsControl.ItemsPanel>
 				<ItemsPanelTemplate>
 					<WrapPanel Orientation="Horizontal" VerticalAlignment="Bottom"/>
