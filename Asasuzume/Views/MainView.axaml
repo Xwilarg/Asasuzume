@@ -4,12 +4,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:Asasuzume.ViewModels"
              xmlns:m="clr-namespace:Asasuzume.Models"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
              x:Class="Asasuzume.Views.MainView"
              x:DataType="vm:MainViewModel">
 	<Design.DataContext>
 		<vm:MainViewModel />
 	</Design.DataContext>
+
+	<UserControl.Styles>
+		<Style Selector="Button.ActionButton">
+			<Setter Property="Height" Value="50"></Setter>
+			<Setter Property="Width" Value="85"></Setter>
+			<Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+			<Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+			<Setter Property="Label.FontSize" Value="20"></Setter>
+		</Style>
+	</UserControl.Styles>
 
 	<UserControl.DataTemplates>
 		<DataTemplate DataType="{x:Type m:APlayer}">
@@ -33,6 +43,7 @@
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="*"></RowDefinition>
+			<RowDefinition Height="100"></RowDefinition>
 			<RowDefinition Height="250"></RowDefinition>
 		</Grid.RowDefinitions>
 
@@ -47,7 +58,20 @@
 
 		</UniformGrid>
 
-		<ItemsControl Grid.Row="1"
+		<StackPanel Grid.Row="1"
+					HorizontalAlignment="Right"
+					VerticalAlignment="Center"
+					Margin="0 0 50 0"
+					Orientation="Horizontal"
+					Spacing="20">
+			<Button Classes="ActionButton" Background="LightBlue"><Label>Chii</Label></Button>
+			<Button Classes="ActionButton" Background="LightGreen"><Label>Pon</Label></Button>
+			<Button Classes="ActionButton" Background="LightPink"><Label>Kan</Label></Button>
+			<Button Classes="ActionButton" Background="Salmon"><Label>Ron</Label></Button>
+			<Button Classes="ActionButton" Background="LightGray"><Label FontSize="12">Ryuukyoku</Label></Button>
+		</StackPanel>
+
+		<ItemsControl Grid.Row="2"
 					  HorizontalAlignment="Center"
 					  ItemsSource="{Binding Items}">
 			<ItemsControl.ItemsPanel>
@@ -58,7 +82,7 @@
 			<ItemsControl.ItemTemplate>
 				<DataTemplate>
 					<Border Height="100" BorderBrush="Gray" BorderThickness="1" Margin="5" CornerRadius="3">
-						<Button Background="Black" Command="{Binding OnTileSelected}">
+						<Button Background="White" Command="{Binding OnTileSelected}">
 							<Svg Path="{Binding ImagePath}"/>
 						</Button>
 					</Border>
