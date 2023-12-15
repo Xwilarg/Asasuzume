@@ -38,10 +38,10 @@
 					 Columns="2"
 					 Rows="2">
 
-			<v:PlayerHandView Grid.Row="0" Grid.Column="0" Player="{Binding Players[0]}"></v:PlayerHandView>
-			<v:PlayerHandView Grid.Row="0" Grid.Column="0" Player="{Binding Players[1]}"></v:PlayerHandView>
-			<v:PlayerHandView Grid.Row="0" Grid.Column="0" Player="{Binding Players[2]}"></v:PlayerHandView>
-			<v:PlayerHandView Grid.Row="0" Grid.Column="0" Player="{Binding Players[3]}"></v:PlayerHandView>
+			<v:PlayerHandView Player="{Binding Players[0]}"></v:PlayerHandView>
+			<v:PlayerHandView Player="{Binding Players[1]}"></v:PlayerHandView>
+			<v:PlayerHandView Player="{Binding Players[2]}"></v:PlayerHandView>
+			<v:PlayerHandView Player="{Binding Players[3]}"></v:PlayerHandView>
 
 		
 		</UniformGrid>
