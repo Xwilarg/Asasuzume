@@ -2,6 +2,7 @@ using Asasuzume.Models;
 using Asasuzume.Models.Services;
 using Asasuzume.ViewModels;
 using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Data;
 using Avalonia.ReactiveUI;
 using ReactiveUI;
@@ -29,6 +30,7 @@ namespace Asasuzume.Views
             this.WhenActivated(_ =>
             {
                 ViewModel.Player = Locator.Current.GetService<IGameManager>()!.GetPlayer(GetValue(PlayerProperty));
+                this.Find<ItemsControl>("Discard")!.ItemsSource = ViewModel.Discarded; // I somehow can't manage to find how to bind that properly from the XAML
             });
         }
     }

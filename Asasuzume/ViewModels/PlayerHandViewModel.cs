@@ -7,5 +7,5 @@ public class PlayerHandViewModel : ViewModelBase
 {
     public APlayer Player { set; get; }
 
-    public ObservableCollection<MahjongTile> Discarded => Player?.Discarded ?? new();
+    public ObservableCollection<MahjongTile> Discarded => Player?.Discarded;
 }

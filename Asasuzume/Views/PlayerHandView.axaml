@@ -19,7 +19,7 @@
 
 		<ItemsControl Grid.Row="0"
 					  HorizontalAlignment="Center"
-					  ItemsSource="{Binding Discarded}">
+					  Name="Discard">
 			<ItemsControl.ItemsPanel>
 				<ItemsPanelTemplate>
 					<StackPanel Orientation="Horizontal"/>
@@ -27,7 +27,9 @@
 			</ItemsControl.ItemsPanel>
 			<ItemsControl.ItemTemplate>
 				<DataTemplate>
-					<Label Content="{Binding ImagePath}"></Label>
+					<Border Height="50" BorderBrush="Gray" BorderThickness="1" Margin="2" CornerRadius="3">
+						<Svg Path="{Binding ImagePath}"/>
+					</Border>
 				</DataTemplate>
 			</ItemsControl.ItemTemplate>
 		</ItemsControl>
