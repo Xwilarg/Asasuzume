@@ -26,6 +26,11 @@ namespace Asasuzume.Models.Services
             _players.Add(player);
         }
 
+        public APlayer GetPlayer(int index)
+        {
+            return _players[index];
+        }
+
         public MahjongTile? LastThrownTile => _players[_turnIndex].LastDiscarded;
 
         public bool IsMyTurnCurrent(int me) => _turnIndex == me;

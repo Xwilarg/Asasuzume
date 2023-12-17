@@ -19,7 +19,7 @@
 
 		<ItemsControl Grid.Row="0"
 					  HorizontalAlignment="Center"
-					  ItemsSource="{Binding Items}">
+					  ItemsSource="{Binding Discarded}">
 			<ItemsControl.ItemsPanel>
 				<ItemsPanelTemplate>
 					<StackPanel Orientation="Horizontal"/>
