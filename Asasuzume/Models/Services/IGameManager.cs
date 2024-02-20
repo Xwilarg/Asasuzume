@@ -1,4 +1,5 @@
 ﻿using Asasuzume.Models.Player;
+using Asasuzume.Models.Tile;
 
 namespace Asasuzume.Models.Services
 {
@@ -27,5 +28,12 @@ namespace Asasuzume.Models.Services
         /// </summary>
         /// <param name="p"></param>
         public void DiscardPending(APlayer p);
+        /// <summary>
+        /// Do a combination of tiles
+        /// </summary>
+        /// <param name="p">Player doing the combination</param>
+        /// <param name="comb">Combination being done</param>
+        /// <param name="tiles">Tiles concerned</param>
+        public void SelectCombination(APlayer p, Combination comb, MahjongTile[] tiles);
     }
 }

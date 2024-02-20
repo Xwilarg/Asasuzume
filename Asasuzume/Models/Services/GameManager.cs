@@ -11,7 +11,8 @@ namespace Asasuzume.Models.Services
         /// <summary>
         /// Players we are waiting for before starting next turn
         /// </summary>
-        private readonly List<APlayer> _pendingPlayers = new();
+        private readonly List<APlayer> _pendingPlayers = [];
+        private readonly Dictionary<APlayer, (Combination Combination, MahjongTile[] Tiles)> _pendingCombinations = new();
 
         /// <inheritdoc/>
         public void EndTurn()
@@ -53,8 +54,32 @@ namespace Asasuzume.Models.Services
             _pendingPlayers.Remove(p);
             if (!_pendingPlayers.Any())
             {
-                StartNextTurn();
+                if (_pendingCombinations.Any())
+                {
+                    // If any player did a combination, we select the best one
+                    var combs = _pendingCombinations.OrderByDescending(x => x.Value.Combination);
+                    var best = combs.First();
+
+                    foreach (var tile in best.Value.Tiles)
+                    {
+                        best.Key.Discard(tile);
+                    }
+
+                    _pendingCombinations.Clear();
+                    SkipToMyTurn(best.Key.Index);
+                }
+                else
+                {
+                    StartNextTurn();
+                }
             }
+        }
+
+        /// <inheritdoc/>
+        public void SelectCombination(APlayer p, Combination comb, MahjongTile[] tiles)
+        {
+            _pendingCombinations.Add(p, (comb, tiles));
+            DiscardPending(p);
         }
 
         public void SkipToMyTurn(int index)
