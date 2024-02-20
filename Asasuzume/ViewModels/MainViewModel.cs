@@ -1,5 +1,6 @@
-﻿using Asasuzume.Models;
+﻿using Asasuzume.Models.Player;
 using Asasuzume.Models.Services;
+using Asasuzume.Models.Tile;
 using ReactiveUI;
 using Splat;
 using System.Collections.ObjectModel;

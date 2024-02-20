@@ -1,4 +1,5 @@
-﻿using Asasuzume.Models;
+﻿using Asasuzume.Models.Player;
+using Asasuzume.Models.Tile;
 using System.Collections.ObjectModel;
 
 namespace Asasuzume.ViewModels;
