@@ -19,14 +19,27 @@ namespace Asasuzume.Models.Player
             }
         }
 
-        public void Discard(MahjongTile tile)
+        /// <summary>
+        /// Remove a tile from the hand
+        /// Compared to <seealso cref="Discard(MahjongTile)"/> this just get rid of the tile
+        /// This is for example used when doing a combinations and the tiles are moved elsewhere
+        /// </summary>
+        public void RemoveFromHand(MahjongTile tile)
         {
             if (!Deck.Contains(tile))
             {
                 throw new InvalidOperationException("Tile isn't contained in the deck");
             }
-            Discarded.Add(tile);
             Deck.Remove(tile);
+        }
+
+        /// <summary>
+        /// Remove a tile from the hand and move to discard pile
+        /// </summary>
+        public void Discard(MahjongTile tile)
+        {
+            RemoveFromHand(tile);
+            Discarded.Add(tile);
         }
 
         public virtual void StartTurn()
@@ -85,6 +98,16 @@ namespace Asasuzume.Models.Player
             return combinaisons;
         }
 
+        public void RemoveLastDiscarded()
+        {
+            Discarded.Remove(LastDiscarded!);
+        }
+
+        public void AddCombination(MahjongTile[] tiles)
+        {
+            Combinations.Add(tiles);
+        }
+
         /// <summary>
         /// Check if the player does one of the various combinaison
         /// </summary>
@@ -93,13 +116,9 @@ namespace Asasuzume.Models.Player
 
         public ObservableCollection<MahjongTile> Deck { set; get; } = [];
         public ObservableCollection<MahjongTile> Discarded { get; } = [];
+        public ObservableCollection<MahjongTile[]> Combinations { get; } = [];
 
         public MahjongTile? LastDiscarded => Discarded.Any() ? Discarded[^1] : null;
-
-        public void RemoveLastDiscarded()
-        {
-            Discarded.Remove(LastDiscarded!);
-        }
 
         /// <summary>
         /// What is our turn order
