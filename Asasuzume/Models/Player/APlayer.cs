@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System;
 using System.Linq;
 using Asasuzume.Models.Tile;
+using System.Collections.Generic;
 
 namespace Asasuzume.Models.Player
 {
@@ -41,30 +42,63 @@ namespace Asasuzume.Models.Player
             Deck.Add(tile);
         }
 
-        public bool CanChii(MahjongTile tile)
+        /// <summary>
+        /// Return all sequences of 3 in the code
+        /// </summary>
+        public List<MahjongTile[]> CanChii(MahjongTile tile)
         {
+            List<MahjongTile[]> combinaisons = [];
+
             var tiles = Deck.Where(x => x.TileType == tile.TileType);
-            if (tiles.Any(x => x.Value == tile.Value - 1) && (tiles.Any(x => x.Value == tile.Value - 2) || tiles.Any(x => x.Value == tile.Value + 1)))
+            foreach (var prev in tiles.Where(x => x.Value == tile.Value - 1)) // Start at previous tile...
             {
-                return true;
+                List<MahjongTile> sequence = [tile, prev];
+                foreach (var prev2 in tiles.Where(x => x.Value == tile.Value - 2)) // Add with tile - 2
+                {
+                    List<MahjongTile> res = new(sequence)
+                    {
+                        prev2
+                    };
+                    combinaisons.Add([.. res]);
+                }
+                foreach (var next in tiles.Where(x => x.Value == tile.Value + 1)) // Add with tile + 1
+                {
+                    List<MahjongTile> res = new(sequence)
+                    {
+                        next
+                    };
+                    combinaisons.Add([.. res]);
+                }
             }
-            if (tiles.Any(x => x.Value == tile.Value + 1) && tiles.Any(x => x.Value == tile.Value + 2))
+            foreach (var next in tiles.Where(x => x.Value == tile.Value + 1)) // Start at next tile...
             {
-                return true;
+                List<MahjongTile> sequence = [tile, next];
+                foreach (var next2 in tiles.Where(x => x.Value == tile.Value + 2)) // Add with tile + 2
+                {
+                    List<MahjongTile> res = new(sequence)
+                    {
+                        next2
+                    };
+                    combinaisons.Add([.. res]);
+                }
             }
-            return false;
+            return combinaisons;
         }
 
         /// <summary>
         /// Check if the player does one of the various combinaison
         /// </summary>
-        /// <param name="combinaisons"></param>
-        /// <returns></returns>
-        public abstract void CheckCombinaison(Combinaison[] combinaisons);
+        /// <param name="combinaisons">For each combinaisons, associate each list of tile concerned</param>
+        public abstract void CheckCombinations(Dictionary<Combination, List<MahjongTile[]>> combinaisons);
 
-        public ObservableCollection<MahjongTile> Deck { set; get; } = new();
-        public ObservableCollection<MahjongTile> Discarded { get; } = new();
+        public ObservableCollection<MahjongTile> Deck { set; get; } = [];
+        public ObservableCollection<MahjongTile> Discarded { get; } = [];
 
         public MahjongTile? LastDiscarded => Discarded.Any() ? Discarded[^1] : null;
+
+        /// <summary>
+        /// What is our turn order
+        /// </summary>
+        public int Index { set; get; } = -1;
     }
 }

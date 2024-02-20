@@ -1,6 +1,6 @@
 ﻿namespace Asasuzume.Models.Tile
 {
-    public enum Combinaison
+    public enum Combination
     {
         Chii
     }

@@ -1,6 +1,5 @@
 ﻿using Asasuzume.Models.Player;
 using Asasuzume.Models.Tile;
-using Avalonia.Metadata;
 using Splat;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,17 +17,18 @@ namespace Asasuzume.Models.Services
         public void EndTurn()
         {
             // Check conditions for AIs
-            List<(APlayer p, Combinaison[] comb)> pending = new();
+            List<(APlayer p, Dictionary<Combination, List<MahjongTile[]>> comb)> pending = [];
             for (int i = 0; i < _players.Count; i++)
             {
                 var p = _players[i];
 
-                var combs = new List<Combinaison>();
-                if (p.CanChii(LastThrownTile)) combs.Add(Combinaison.Chii);
+                var combs = new Dictionary<Combination, List<MahjongTile[]>>();
+                var chii = p.CanChii(LastThrownTile!);
+                if (chii.Any()) combs.Add(Combination.Chii, chii);
 
                 if (combs.Any())
                 {
-                    pending.Add((p, combs.ToArray()));
+                    pending.Add((p, combs));
                 }
             }
 
@@ -38,7 +38,7 @@ namespace Asasuzume.Models.Services
 
                 foreach (var p in pending)
                 {
-                    p.p.CheckCombinaison(p.comb);
+                    p.p.CheckCombinations(p.comb);
                 }
             }
             else // No pending player so we directly start next turn
@@ -57,6 +57,12 @@ namespace Asasuzume.Models.Services
             }
         }
 
+        public void SkipToMyTurn(int index)
+        {
+            _turnIndex = index;
+            _players[_turnIndex].StartTurn();
+        }
+
         /// <inheritdoc/>
         public void StartNextTurn()
         {
@@ -72,6 +78,8 @@ namespace Asasuzume.Models.Services
         /// <inheritdoc/>
         public void RegisterPlayer(APlayer player)
         {
+            player.Index = _players.Count;
+
             if (!_players.Any()) // First player get an additional tile for his first turn
             {
                 player.AddTile(Locator.Current.GetService<IMahjongDeck>()!.DrawTile());

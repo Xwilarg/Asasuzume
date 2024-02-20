@@ -9,6 +9,11 @@ namespace Asasuzume.Models.Services
         /// </summary>
         public void EndTurn();
         /// <summary>
+        /// End the current turn by putting the next turn position as the current index
+        /// </summary>
+        /// <param name="index"></param>
+        public void SkipToMyTurn(int index);
+        /// <summary>
         /// Register a new player to the game
         /// </summary>
         /// <param name="player"></param>

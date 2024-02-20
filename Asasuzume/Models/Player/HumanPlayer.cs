@@ -3,6 +3,7 @@ using Asasuzume.Models.Tile;
 using DynamicData;
 using ReactiveUI;
 using Splat;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Asasuzume.Models.Player
@@ -26,7 +27,7 @@ namespace Asasuzume.Models.Player
             });
         }
 
-        public override void CheckCombinaison(Combinaison[] combinaisons)
+        public override void CheckCombinations(Dictionary<Combination, List<MahjongTile[]>> combinaisons)
         {
             Locator.Current.GetService<IGameManager>()!.DiscardPending(this);
         }

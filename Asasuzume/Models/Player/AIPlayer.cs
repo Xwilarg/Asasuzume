@@ -1,6 +1,7 @@
 ﻿using Asasuzume.Models.Services;
 using Asasuzume.Models.Tile;
 using Splat;
+using System.Collections.Generic;
 
 namespace Asasuzume.Models.Player
 {
@@ -13,7 +14,7 @@ namespace Asasuzume.Models.Player
             Locator.Current.GetService<IGameManager>()!.EndTurn();
         }
 
-        public override void CheckCombinaison(Combinaison[] combinaisons)
+        public override void CheckCombinations(Dictionary<Combination, List<MahjongTile[]>> combinaisons)
         {
             Locator.Current.GetService<IGameManager>()!.DiscardPending(this);
         }
