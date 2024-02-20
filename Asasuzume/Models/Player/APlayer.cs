@@ -96,6 +96,11 @@ namespace Asasuzume.Models.Player
 
         public MahjongTile? LastDiscarded => Discarded.Any() ? Discarded[^1] : null;
 
+        public void RemoveLastDiscarded()
+        {
+            Discarded.Remove(LastDiscarded!);
+        }
+
         /// <summary>
         /// What is our turn order
         /// </summary>

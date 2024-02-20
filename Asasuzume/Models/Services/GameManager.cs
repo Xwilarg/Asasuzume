@@ -60,7 +60,14 @@ namespace Asasuzume.Models.Services
                     var combs = _pendingCombinations.OrderByDescending(x => x.Value.Combination);
                     var best = combs.First();
 
-                    foreach (var tile in best.Value.Tiles)
+                    var combTiles = best.Value.Tiles.ToList();
+
+                    // One of the tiles isn't in the player hand but is the last discarded one
+                    combTiles.Remove(LastThrownTile!);
+                    _players[_turnIndex].RemoveLastDiscarded();
+
+                    // Discard (for now) all tiles from the player hand related to the combination
+                    foreach (var tile in combTiles)
                     {
                         best.Key.Discard(tile);
                     }
