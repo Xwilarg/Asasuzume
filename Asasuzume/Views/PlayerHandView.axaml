@@ -19,9 +19,9 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <ItemsControl Name="Discard"
-                      Grid.Row="0"
-                      HorizontalAlignment="Center">
+        <ItemsControl Grid.Row="0"
+                      HorizontalAlignment="Center"
+                      ItemsSource="{Binding Discarded}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal" />

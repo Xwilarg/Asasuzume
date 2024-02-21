@@ -22,7 +22,7 @@ public class MainViewModel : ViewModelBase
 
         var deck = Locator.Current.GetService<IGameManager>()!;
         Human = new HumanPlayer();
-        Players = new APlayer[] { Human, new AIPlayer(), new AIPlayer(), new AIPlayer() };
+        Players = [Human, new AIPlayer(), new AIPlayer(), new AIPlayer()];
         foreach (var p in Players)
         {
             deck.RegisterPlayer(p);
