@@ -4,11 +4,12 @@ namespace Asasuzume.Models.Tile
 {
     public class MahjongTile
     {
-        public MahjongTile(string imagePath, TileType tileType, int value)
+        public MahjongTile(string imagePath, TileType tileType, int value, bool isRedDora)
         {
             ImagePath = imagePath;
             TileType = tileType;
             Value = value;
+            IsRedDora = isRedDora;
         }
 
         public override string ToString()
@@ -19,6 +20,7 @@ namespace Asasuzume.Models.Tile
         public string ImagePath { set; get; }
         public TileType TileType;
         public int Value;
+        public bool IsRedDora;
         public ICommand OnTileSelected { set; get; }
     }
 }

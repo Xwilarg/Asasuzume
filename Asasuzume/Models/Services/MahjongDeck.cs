@@ -18,24 +18,24 @@ namespace Asasuzume.Models.Services
                 {
                     if (i == 5 && useRedFives)
                     {
-                        _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{c}5.svg", c, 5), 3));
-                        _refDeck.Add(new($"{TilePath}{c}5Red.svg", c, 5));
+                        _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{c}5.svg", c, value: 5, isRedDora: false), 3));
+                        _refDeck.Add(new($"{TilePath}{c}5Red.svg", c, value: 5, isRedDora: true));
                     }
                     else
                     {
-                        _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{c}{i}.svg", c, i), 4));
+                        _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{c}{i}.svg", c, value: i, isRedDora: false), 4));
                     }
                 }
             }
             var winds = new[] { "East", "West", "North", "South" };
-            foreach (var w in winds)
+            for (int i = 0; i < winds.Length; i++)
             {
-                _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{w}.svg", TileType.Wind, 0), 4)); // TODO: Right value
+                _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{winds[i]}.svg", TileType.Wind, value: i, isRedDora: false), 4));
             }
             var dragons = new[] { "Green", "White", "Red" };
-            foreach (var d in dragons)
+            for (int i = 0; i < dragons.Length; i++)
             {
-                _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{d}.svg", TileType.Dragon, 0), 4)); // TODO: Right value
+                _refDeck.AddRange(Enumerable.Repeat(new MahjongTile($"{TilePath}{dragons[i]}.svg", TileType.Dragon, value: i, isRedDora: false), 4));
             }
 
             _deck = new(_refDeck);

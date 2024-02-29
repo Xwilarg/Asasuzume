@@ -1,6 +1,7 @@
 ﻿using Asasuzume.Models.Player;
 using Asasuzume.Models.Tile;
 using Splat;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -24,7 +25,7 @@ namespace Asasuzume.Models.Services
                 var p = _players[i];
 
                 var combs = new Dictionary<Combination, List<MahjongTile[]>>();
-                var chii = p.CanChii(LastThrownTile!);
+                var chii = IsMyTurnNext(i) ? p.CanChii(LastThrownTile!) : [];
                 if (chii.Any()) combs.Add(Combination.Chii, chii);
 
                 if (combs.Any())
