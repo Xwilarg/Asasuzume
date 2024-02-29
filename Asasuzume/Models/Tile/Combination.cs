@@ -2,6 +2,8 @@
 {
     public enum Combination
     {
-        Chii
+        Chii,
+        Pon,
+        Kan
     }
 }

@@ -98,6 +98,34 @@ namespace Asasuzume.Models.Player
             return combinaisons;
         }
 
+        public List<MahjongTile[]> CanPon(MahjongTile tile)
+        {
+            var matching = Deck.Where(x => x.Value == tile.Value && x.TileType == tile.TileType).ToArray();
+            if (matching.Length >= 2)
+            {
+                List<MahjongTile[]> tiles = [];
+                for (int i = 0; i < matching.Length - 1; i++)
+                {
+                    for (int y = i + 1; y < matching.Length - 1; y++)
+                    {
+                        tiles.Add([tile, Deck[i], Deck[y]]);
+                    }
+                }
+                return tiles;
+            }
+            return [];
+        }
+
+        public List<MahjongTile[]> CanKan(MahjongTile tile)
+        {
+            var matching = Deck.Where(x => x.Value == tile.Value && x.TileType == tile.TileType).ToArray();
+            if (matching.Length == 3) // We can't have more than 4 anyway
+            {
+                return [ [ ..matching, tile ] ];
+            }
+            return [];
+        }
+
         public void RemoveLastDiscarded()
         {
             Discarded.Remove(LastDiscarded!);

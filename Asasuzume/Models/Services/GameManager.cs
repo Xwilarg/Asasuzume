@@ -26,7 +26,12 @@ namespace Asasuzume.Models.Services
 
                 var combs = new Dictionary<Combination, List<MahjongTile[]>>();
                 var chii = IsMyTurnNext(i) ? p.CanChii(LastThrownTile!) : [];
+                var pon = p.CanPon(LastThrownTile!);
+                var kan = p.CanKan(LastThrownTile!);
+
                 if (chii.Any()) combs.Add(Combination.Chii, chii);
+                if (pon.Any()) combs.Add(Combination.Pon, chii);
+                if (kan.Any()) combs.Add(Combination.Kan, chii);
 
                 if (combs.Any())
                 {
